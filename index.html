@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Atelier D.</title>
+
   <style>
     * {
       box-sizing: border-box;
@@ -11,15 +12,23 @@
       padding: 0;
     }
 
+    :root {
+      --fond: #f3f0e8;
+      --texte: #252525;
+      --accent: #7f8b78;
+      --carte: #fffdf8;
+      --clair: #e9e4d9;
+    }
+
     body {
-      font-family: Georgia, "Times New Roman", serif;
-      background: #f3f0e8;
-      color: #1f1f1f;
+      background: var(--fond);
+      color: var(--texte);
+      font-family: Arial, Helvetica, sans-serif;
     }
 
     header {
       height: 72px;
-      background: #f3f0e8;
+      background: var(--fond);
       display: flex;
       align-items: center;
       justify-content: flex-end;
@@ -36,7 +45,8 @@
 
     nav a {
       text-decoration: none;
-      color: #1f1f1f;
+      color: var(--texte);
+      font-family: Georgia, "Times New Roman", serif;
       font-size: 1rem;
     }
 
@@ -44,8 +54,15 @@
       position: relative;
       min-height: calc(100vh - 72px);
       background-image:
-        linear-gradient(to right, rgba(0,0,0,0.42) 0%, rgba(0,0,0,0.18) 38%, rgba(0,0,0,0.05) 65%, rgba(0,0,0,0.02) 100%),
+        linear-gradient(
+          to right,
+          rgba(0,0,0,0.42) 0%,
+          rgba(0,0,0,0.18) 38%,
+          rgba(0,0,0,0.05) 65%,
+          rgba(0,0,0,0.02) 100%
+        ),
         url("60015cb8-e3c0-49d5-978b-a4368e82b0ae.JPEG");
+
       background-size: cover;
       background-position: center;
       display: flex;
@@ -67,19 +84,20 @@
     }
 
     .hero h1 {
+      font-family: Georgia, "Times New Roman", serif;
       font-size: 4.2rem;
       line-height: 1;
       margin-bottom: 14px;
     }
 
     .hero h2 {
-      font-size: 1.1rem;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.8rem;
       font-weight: normal;
       margin-bottom: 28px;
     }
 
     .hero p {
-      font-family: Arial, Helvetica, sans-serif;
       font-size: 1rem;
       line-height: 1.7;
       max-width: 470px;
@@ -88,16 +106,82 @@
 
     .btn {
       display: inline-block;
-      background: #7f8b78;
+      background: var(--accent);
       color: white;
       text-decoration: none;
       padding: 16px 28px;
-      font-family: Arial, Helvetica, sans-serif;
       font-size: 1rem;
     }
 
-    .btn:hover {
-      background: #6f7b69;
+    .pieces {
+      padding: 90px 6%;
+    }
+
+    .pieces-kicker {
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      margin-bottom: 10px;
+    }
+
+    .pieces h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 2.5rem;
+      font-weight: normal;
+      margin-bottom: 42px;
+    }
+
+    .pieces-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .piece-card {
+      background: var(--carte);
+      padding: 18px;
+    }
+
+    .piece-image {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      background: var(--clair);
+      margin-bottom: 18px;
+    }
+
+    .piece-card h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+    }
+
+    .piece-type {
+      font-size: 0.92rem;
+      line-height: 1.5;
+      margin-bottom: 14px;
+    }
+
+    .piece-price {
+      display: block;
+      font-size: 1.05rem;
+      margin-bottom: 12px;
+    }
+
+    .status {
+      display: inline-block;
+      font-size: 0.82rem;
+      color: var(--accent);
+      background: #e2e5de;
+      padding: 6px 12px;
+      border-radius: 18px;
+      margin-bottom: 16px;
+    }
+
+    .piece-link {
+      display: block;
+      color: var(--texte);
+      text-decoration: none;
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
     }
 
     @media (max-width: 900px) {
@@ -131,27 +215,31 @@
       }
 
       .hero h2 {
-        font-size: 1.6rem;
+        font-size: 1.45rem;
         line-height: 1.3;
       }
 
-      .hero p {
-        font-size: 1rem;
+      .pieces {
+        padding: 60px 24px;
       }
 
-      .btn {
-        width: 100%;
-        max-width: 260px;
-        text-align: center;
+      .pieces h2 {
+        font-size: 2rem;
+      }
+
+      .pieces-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
+
 <body>
+
   <header>
     <nav>
       <ul>
-        <li><a href="#">Créations</a></li>
+        <li><a href="#creations">Créations</a></li>
         <li><a href="#">L’atelier</a></li>
         <li><a href="#">Galerie</a></li>
         <li><a href="#">Contact</a></li>
@@ -161,15 +249,66 @@
 
   <section class="hero">
     <div class="hero-content">
-     <img src="Logo_Site_transparent.png" alt="Logo Atelier D." class="hero-logo" />
+
+      <img
+        src="Logo_Site_transparent.png"
+        alt="Logo Atelier D."
+        class="hero-logo"
+      />
+
       <h1>ATELIER D.</h1>
+
       <h2>Créations coutelières artisanales</h2>
+
       <p>
         Des pièces uniques et de petites séries, façonnées artisanalement
         entre acier, bois et matières naturelles.
       </p>
-      <a href="#" class="btn">Découvrir les créations</a>
+
+      <a href="#creations" class="btn">
+        Découvrir les créations
+      </a>
+
     </div>
   </section>
+
+  <section class="pieces" id="creations">
+
+    <p class="pieces-kicker">PIÈCES DISPONIBLES</p>
+
+    <h2>Créations actuellement disponibles</h2>
+
+    <div class="pieces-grid">
+
+      <article class="piece-card">
+        <div class="piece-image"></div>
+        <h3>Nom de la pièce</h3>
+        <p class="piece-type">Pliant artisanal · Matières</p>
+        <strong class="piece-price">XXX €</strong>
+        <span class="status">Disponible</span>
+        <a href="#" class="piece-link">VOIR LA PIÈCE →</a>
+      </article>
+
+      <article class="piece-card">
+        <div class="piece-image"></div>
+        <h3>Nom de la pièce</h3>
+        <p class="piece-type">Couteau de cuisine · Matières</p>
+        <strong class="piece-price">XXX €</strong>
+        <span class="status">Disponible</span>
+        <a href="#" class="piece-link">VOIR LA PIÈCE →</a>
+      </article>
+
+      <article class="piece-card">
+        <div class="piece-image"></div>
+        <h3>Nom de la pièce</h3>
+        <p class="piece-type">Couteau de table · Matières</p>
+        <strong class="piece-price">XXX €</strong>
+        <span class="status">Disponible</span>
+        <a href="#" class="piece-link">VOIR LA PIÈCE →</a>
+      </article>
+
+    </div>
+  </section>
+
 </body>
 </html>
