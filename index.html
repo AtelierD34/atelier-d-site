@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Atelier D. — Coutellerie artisanale</title>
 
   <style>
@@ -18,6 +19,10 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -31,6 +36,7 @@
       justify-content: space-between;
       align-items: center;
       border-bottom: 1px solid #d8d2c7;
+      background: var(--fond);
     }
 
     .brand {
@@ -50,7 +56,20 @@
       display: flex;
       align-items: center;
       padding: 8%;
-      background: var(--clair);
+      color: #F3F0E8;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 0.48) 0%,
+          rgba(0, 0, 0, 0.30) 28%,
+          rgba(0, 0, 0, 0.00) 60%
+        ),
+        url("60015cb8-e3c0-49d5-978b-a4368e82b0ae.JPEG");
+
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
 
     .hero-content {
@@ -61,6 +80,7 @@
       font-family: Georgia, serif;
       font-size: 4rem;
       margin: 0 0 12px;
+      color: #F3F0E8;
     }
 
     .hero h2 {
@@ -68,11 +88,13 @@
       font-weight: normal;
       font-size: 1.8rem;
       margin: 0 0 24px;
+      color: #F3F0E8;
     }
 
     .hero p {
       line-height: 1.6;
       max-width: 460px;
+      color: #F3F0E8;
     }
 
     .btn {
@@ -145,12 +167,29 @@
       }
 
       .hero {
-        min-height: auto;
-        padding: 60px 24px;
+        min-height: 620px;
+        padding: 50px 24px;
+        align-items: flex-start;
+
+        background:
+          linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.38) 0%,
+            rgba(0, 0, 0, 0.15) 38%,
+            rgba(0, 0, 0, 0.00) 65%
+          ),
+          url("60015cb8-e3c0-49d5-978b-a4368e82b0ae.JPEG");
+
+        background-size: cover;
+        background-position: center;
       }
 
       .hero h1 {
         font-size: 2.8rem;
+      }
+
+      .hero h2 {
+        font-size: 1.45rem;
       }
 
       section {
@@ -182,7 +221,9 @@
 
     <section class="hero">
       <div class="hero-content">
+
         <h1>ATELIER D.</h1>
+
         <h2>Créations coutelières artisanales</h2>
 
         <p>
@@ -191,92 +232,168 @@
           bois et matières naturelles.
         </p>
 
-        <a class="btn" href="#creations">Découvrir les créations</a>
+        <a class="btn" href="#creations">
+          Découvrir les créations
+        </a>
+
       </div>
     </section>
 
     <section id="creations">
+
       <p>PIÈCES DISPONIBLES</p>
-      <h2>Créations actuellement disponibles</h2>
+
+      <h2>
+        Créations actuellement disponibles
+      </h2>
 
       <div class="grid-3">
+
         <article class="card">
+
           <div class="image-placeholder"></div>
+
           <h3>Nom de la pièce</h3>
-          <p>Pliant artisanal · Matières</p>
-          <strong>XXX €</strong><br>
-          <span class="status">Disponible</span>
+
+          <p>
+            Pliant artisanal · Matières
+          </p>
+
+          <strong>XXX €</strong>
+
+          <br>
+
+          <span class="status">
+            Disponible
+          </span>
+
         </article>
 
         <article class="card">
+
           <div class="image-placeholder"></div>
+
           <h3>Nom de la pièce</h3>
-          <p>Couteau de cuisine · Matières</p>
-          <strong>XXX €</strong><br>
-          <span class="status">Disponible</span>
+
+          <p>
+            Couteau de cuisine · Matières
+          </p>
+
+          <strong>XXX €</strong>
+
+          <br>
+
+          <span class="status">
+            Disponible
+          </span>
+
         </article>
 
         <article class="card">
+
           <div class="image-placeholder"></div>
+
           <h3>Nom de la pièce</h3>
-          <p>Couteau de table · Matières</p>
-          <strong>XXX €</strong><br>
-          <span class="status">Disponible</span>
+
+          <p>
+            Couteau de table · Matières
+          </p>
+
+          <strong>XXX €</strong>
+
+          <br>
+
+          <span class="status">
+            Disponible
+          </span>
+
         </article>
+
       </div>
     </section>
 
     <section id="atelier">
+
       <p>L’UNIVERS DE L’ATELIER</p>
-      <h2>Matière, geste, usages</h2>
+
+      <h2>
+        Matière, geste, usages
+      </h2>
 
       <div class="grid-3">
+
         <article>
+
           <div class="image-placeholder"></div>
+
           <h3>LA MATIÈRE</h3>
+
           <p>
             Des matériaux choisis pour leur caractère,
             leur qualité et leur adéquation à chaque pièce.
           </p>
+
         </article>
 
         <article>
+
           <div class="image-placeholder"></div>
+
           <h3>LE GESTE</h3>
+
           <p>
             Chaque création est conçue, mise en forme,
             ajustée et finie artisanalement.
           </p>
+
         </article>
 
         <article>
+
           <div class="image-placeholder"></div>
+
           <h3>LES USAGES</h3>
+
           <p>
             Cuisine, table, quotidien, extérieur
             ou créations spécifiques.
           </p>
+
         </article>
+
       </div>
     </section>
 
     <section id="galerie">
+
       <p>DERNIÈRES CRÉATIONS</p>
-      <h2>Quelques pièces sorties de l’atelier</h2>
+
+      <h2>
+        Quelques pièces sorties de l’atelier
+      </h2>
 
       <div class="grid-3">
+
         <div class="image-placeholder"></div>
+
         <div class="image-placeholder"></div>
+
         <div class="image-placeholder"></div>
+
       </div>
     </section>
 
     <section class="split">
+
       <div class="image-placeholder"></div>
 
       <div>
+
         <p>L’ATELIER / L’ARTISAN</p>
-        <h2>Derrière chaque pièce</h2>
+
+        <h2>
+          Derrière chaque pièce
+        </h2>
 
         <p>
           Je conçois et réalise chaque couteau dans mon atelier,
@@ -285,35 +402,52 @@
 
         <p>
           Le choix des matériaux, l’usage prévu et la recherche
-          du bon équilibre guident chaque création, de la conception
-          aux finitions.
+          du bon équilibre guident chaque création,
+          de la conception aux finitions.
         </p>
 
         <p>
-          Chaque pièce est pensée pour être utilisée, durer
-          et conserver son caractère au fil du temps.
+          Chaque pièce est pensée pour être utilisée,
+          durer et conserver son caractère au fil du temps.
         </p>
+
       </div>
+
     </section>
 
     <section>
+
       <p>INSTAGRAM</p>
-      <h2>Suivre l’atelier au quotidien</h2>
+
+      <h2>
+        Suivre l’atelier au quotidien
+      </h2>
 
       <p>
         Fabrication, détails, matières et nouvelles pièces :
         retrouver les coulisses de l’atelier sur Instagram.
       </p>
 
-      <a href="#">Suivre l’atelier sur Instagram →</a>
+      <a href="#">
+        Suivre l’atelier sur Instagram →
+      </a>
+
     </section>
 
   </main>
 
   <footer id="contact">
+
     <h2>ATELIER D.</h2>
-    <p>Créations coutelières artisanales</p>
-    <p>© Atelier D.</p>
+
+    <p>
+      Créations coutelières artisanales
+    </p>
+
+    <p>
+      © Atelier D.
+    </p>
+
   </footer>
 
 </body>
