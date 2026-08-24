@@ -4,11 +4,317 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Atelier D. — Coutellerie artisanale</title>
+
+  <style>
+    :root {
+      --fond: #F3F0E8;
+      --texte: #252525;
+      --secondaire: #6B5847;
+      --accent: #6F7768;
+      --clair: #E9E4D9;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--fond);
+      color: var(--texte);
+    }
+
+    header {
+      padding: 20px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #d8d2c7;
+    }
+
+    .brand {
+      font-family: Georgia, serif;
+      font-size: 2rem;
+    }
+
+    nav a {
+      color: var(--texte);
+      text-decoration: none;
+      margin-left: 28px;
+      font-size: 0.9rem;
+    }
+
+    .hero {
+      min-height: 78vh;
+      display: flex;
+      align-items: center;
+      padding: 8%;
+      background: var(--clair);
+    }
+
+    .hero-content {
+      max-width: 520px;
+    }
+
+    .hero h1 {
+      font-family: Georgia, serif;
+      font-size: 4rem;
+      margin: 0 0 12px;
+    }
+
+    .hero h2 {
+      font-family: Georgia, serif;
+      font-weight: normal;
+      font-size: 1.8rem;
+      margin: 0 0 24px;
+    }
+
+    .hero p {
+      line-height: 1.6;
+      max-width: 460px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 22px;
+      padding: 16px 24px;
+      background: var(--accent);
+      color: white;
+      text-decoration: none;
+    }
+
+    section {
+      padding: 80px 6%;
+    }
+
+    section h2 {
+      font-family: Georgia, serif;
+      font-size: 2.6rem;
+      margin-top: 0;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .card {
+      background: #fffdf8;
+      padding: 20px;
+    }
+
+    .image-placeholder {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      background: var(--clair);
+      margin-bottom: 18px;
+    }
+
+    .status {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 6px 12px;
+      border-radius: 20px;
+      background: #E2E5DE;
+      color: var(--accent);
+      font-size: 0.85rem;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    footer {
+      background: var(--texte);
+      color: var(--fond);
+      padding: 60px 6%;
+    }
+
+    @media (max-width: 800px) {
+      header {
+        align-items: flex-start;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 60px 24px;
+      }
+
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+
+      section {
+        padding: 60px 24px;
+      }
+
+      .grid-3,
+      .split {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <h1>Atelier D.</h1>
-  <p>Créations coutelières artisanales</p>
-  <p>Site en cours de construction.</p>
+
+  <header>
+    <div class="brand">ATELIER D.</div>
+
+    <nav>
+      <a href="#creations">Créations</a>
+      <a href="#atelier">L’atelier</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="hero-content">
+        <h1>ATELIER D.</h1>
+        <h2>Créations coutelières artisanales</h2>
+
+        <p>
+          Des pièces uniques et de petites séries,
+          façonnées artisanalement entre acier,
+          bois et matières naturelles.
+        </p>
+
+        <a class="btn" href="#creations">Découvrir les créations</a>
+      </div>
+    </section>
+
+    <section id="creations">
+      <p>PIÈCES DISPONIBLES</p>
+      <h2>Créations actuellement disponibles</h2>
+
+      <div class="grid-3">
+        <article class="card">
+          <div class="image-placeholder"></div>
+          <h3>Nom de la pièce</h3>
+          <p>Pliant artisanal · Matières</p>
+          <strong>XXX €</strong><br>
+          <span class="status">Disponible</span>
+        </article>
+
+        <article class="card">
+          <div class="image-placeholder"></div>
+          <h3>Nom de la pièce</h3>
+          <p>Couteau de cuisine · Matières</p>
+          <strong>XXX €</strong><br>
+          <span class="status">Disponible</span>
+        </article>
+
+        <article class="card">
+          <div class="image-placeholder"></div>
+          <h3>Nom de la pièce</h3>
+          <p>Couteau de table · Matières</p>
+          <strong>XXX €</strong><br>
+          <span class="status">Disponible</span>
+        </article>
+      </div>
+    </section>
+
+    <section id="atelier">
+      <p>L’UNIVERS DE L’ATELIER</p>
+      <h2>Matière, geste, usages</h2>
+
+      <div class="grid-3">
+        <article>
+          <div class="image-placeholder"></div>
+          <h3>LA MATIÈRE</h3>
+          <p>
+            Des matériaux choisis pour leur caractère,
+            leur qualité et leur adéquation à chaque pièce.
+          </p>
+        </article>
+
+        <article>
+          <div class="image-placeholder"></div>
+          <h3>LE GESTE</h3>
+          <p>
+            Chaque création est conçue, mise en forme,
+            ajustée et finie artisanalement.
+          </p>
+        </article>
+
+        <article>
+          <div class="image-placeholder"></div>
+          <h3>LES USAGES</h3>
+          <p>
+            Cuisine, table, quotidien, extérieur
+            ou créations spécifiques.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="galerie">
+      <p>DERNIÈRES CRÉATIONS</p>
+      <h2>Quelques pièces sorties de l’atelier</h2>
+
+      <div class="grid-3">
+        <div class="image-placeholder"></div>
+        <div class="image-placeholder"></div>
+        <div class="image-placeholder"></div>
+      </div>
+    </section>
+
+    <section class="split">
+      <div class="image-placeholder"></div>
+
+      <div>
+        <p>L’ATELIER / L’ARTISAN</p>
+        <h2>Derrière chaque pièce</h2>
+
+        <p>
+          Je conçois et réalise chaque couteau dans mon atelier,
+          en privilégiant les pièces uniques et les petites séries.
+        </p>
+
+        <p>
+          Le choix des matériaux, l’usage prévu et la recherche
+          du bon équilibre guident chaque création, de la conception
+          aux finitions.
+        </p>
+
+        <p>
+          Chaque pièce est pensée pour être utilisée, durer
+          et conserver son caractère au fil du temps.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <p>INSTAGRAM</p>
+      <h2>Suivre l’atelier au quotidien</h2>
+
+      <p>
+        Fabrication, détails, matières et nouvelles pièces :
+        retrouver les coulisses de l’atelier sur Instagram.
+      </p>
+
+      <a href="#">Suivre l’atelier sur Instagram →</a>
+    </section>
+
+  </main>
+
+  <footer id="contact">
+    <h2>ATELIER D.</h2>
+    <p>Créations coutelières artisanales</p>
+    <p>© Atelier D.</p>
+  </footer>
+
 </body>
 </html>
