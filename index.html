@@ -1,192 +1,129 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Atelier D. — Coutellerie artisanale</title>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atelier D.</title>
   <style>
-    :root {
-      --fond: #F3F0E8;
-      --texte: #252525;
-      --secondaire: #6B5847;
-      --accent: #6F7768;
-      --clair: #E9E4D9;
-    }
-
     * {
       box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: var(--fond);
-      color: var(--texte);
+      font-family: Georgia, "Times New Roman", serif;
+      background: #f3f0e8;
+      color: #1f1f1f;
     }
 
     header {
-      padding: 14px 6%;
+      height: 72px;
+      background: #f3f0e8;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid #d8d2c7;
-      background: var(--fond);
+      justify-content: flex-end;
+      padding: 0 60px;
+      position: relative;
+      z-index: 10;
     }
 
-    .brand-logo {
-      display: block;
-      width: 115px;
-      height: auto;
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 38px;
     }
 
     nav a {
-      color: var(--texte);
       text-decoration: none;
-      margin-left: 28px;
-      font-size: 0.9rem;
+      color: #1f1f1f;
+      font-size: 1rem;
     }
 
     .hero {
-      min-height: 78vh;
-      display: flex;
-      align-items: center;
-      padding: 8%;
-      color: #F3F0E8;
-
-      background:
-        linear-gradient(
-          90deg,
-          rgba(0, 0, 0, 0.48) 0%,
-          rgba(0, 0, 0, 0.30) 28%,
-          rgba(0, 0, 0, 0.00) 60%
-        ),
+      position: relative;
+      min-height: calc(100vh - 72px);
+      background-image:
+        linear-gradient(to right, rgba(0,0,0,0.42) 0%, rgba(0,0,0,0.18) 38%, rgba(0,0,0,0.05) 65%, rgba(0,0,0,0.02) 100%),
         url("60015cb8-e3c0-49d5-978b-a4368e82b0ae.JPEG");
-
       background-size: cover;
       background-position: center;
-      background-repeat: no-repeat;
+      display: flex;
+      align-items: center;
+      padding: 70px 90px;
     }
 
     .hero-content {
-      max-width: 520px;
+      max-width: 560px;
+      color: white;
+    }
+
+    .hero-logo {
+      width: 95px;
+      height: auto;
+      display: block;
+      margin-bottom: 26px;
+      filter: brightness(0) invert(1);
     }
 
     .hero h1 {
-      font-family: Georgia, serif;
-      font-size: 4rem;
-      margin: 0 0 12px;
-      color: #F3F0E8;
+      font-size: 4.2rem;
+      line-height: 1;
+      margin-bottom: 14px;
     }
 
     .hero h2 {
-      font-family: Georgia, serif;
+      font-size: 1.1rem;
       font-weight: normal;
-      font-size: 1.8rem;
-      margin: 0 0 24px;
-      color: #F3F0E8;
+      margin-bottom: 28px;
     }
 
     .hero p {
-      line-height: 1.6;
-      max-width: 460px;
-      color: #F3F0E8;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1rem;
+      line-height: 1.7;
+      max-width: 470px;
+      margin-bottom: 34px;
     }
 
     .btn {
       display: inline-block;
-      margin-top: 22px;
-      padding: 16px 24px;
-      background: var(--accent);
+      background: #7f8b78;
       color: white;
       text-decoration: none;
+      padding: 16px 28px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1rem;
     }
 
-    section {
-      padding: 80px 6%;
+    .btn:hover {
+      background: #6f7b69;
     }
 
-    section h2 {
-      font-family: Georgia, serif;
-      font-size: 2.6rem;
-      margin-top: 0;
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
-    }
-
-    .card {
-      background: #fffdf8;
-      padding: 20px;
-    }
-
-    .image-placeholder {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      background: var(--clair);
-      margin-bottom: 18px;
-    }
-
-    .status {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 6px 12px;
-      border-radius: 20px;
-      background: #E2E5DE;
-      color: var(--accent);
-      font-size: 0.85rem;
-    }
-
-    .split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-    }
-
-    footer {
-      background: var(--texte);
-      color: var(--fond);
-      padding: 60px 6%;
-    }
-
-    @media (max-width: 800px) {
+    @media (max-width: 900px) {
       header {
-        align-items: center;
+        justify-content: center;
+        padding: 0 20px;
+        height: auto;
+        min-height: 72px;
       }
 
-      .brand-logo {
-        width: 88px;
-      }
-
-      nav {
-        display: none;
+      nav ul {
+        gap: 18px;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 20px 0;
       }
 
       .hero {
-        min-height: 620px;
-        padding: 50px 24px;
-        align-items: flex-start;
-
-        background:
-          linear-gradient(
-            180deg,
-            rgba(0, 0, 0, 0.38) 0%,
-            rgba(0, 0, 0, 0.15) 38%,
-            rgba(0, 0, 0, 0.00) 65%
-          ),
-          url("60015cb8-e3c0-49d5-978b-a4368e82b0ae.JPEG");
-
-        background-size: cover;
+        min-height: auto;
+        padding: 50px 24px 70px 24px;
         background-position: center;
+      }
+
+      .hero-logo {
+        width: 78px;
+        margin-bottom: 20px;
       }
 
       .hero h1 {
@@ -194,205 +131,45 @@
       }
 
       .hero h2 {
-        font-size: 1.45rem;
+        font-size: 1.6rem;
+        line-height: 1.3;
       }
 
-      section {
-        padding: 60px 24px;
+      .hero p {
+        font-size: 1rem;
       }
 
-      .grid-3,
-      .split {
-        grid-template-columns: 1fr;
+      .btn {
+        width: 100%;
+        max-width: 260px;
+        text-align: center;
       }
     }
   </style>
 </head>
-
 <body>
-
   <header>
-    <img
-      src="Logo Site.png"
-      alt="Logo Atelier D."
-      class="brand-logo"
-    >
-
     <nav>
-      <a href="#creations">Créations</a>
-      <a href="#atelier">L’atelier</a>
-      <a href="#galerie">Galerie</a>
-      <a href="#contact">Contact</a>
+      <ul>
+        <li><a href="#">Créations</a></li>
+        <li><a href="#">L’atelier</a></li>
+        <li><a href="#">Galerie</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
     </nav>
   </header>
 
-  <main>
-
-    <section class="hero">
-      <div class="hero-content">
-
-        <h1>ATELIER D.</h1>
-
-        <h2>Créations coutelières artisanales</h2>
-
-        <p>
-          Des pièces uniques et de petites séries,
-          façonnées artisanalement entre acier,
-          bois et matières naturelles.
-        </p>
-
-        <a class="btn" href="#creations">
-          Découvrir les créations
-        </a>
-
-      </div>
-    </section>
-
-    <section id="creations">
-
-      <p>PIÈCES DISPONIBLES</p>
-
-      <h2>
-        Créations actuellement disponibles
-      </h2>
-
-      <div class="grid-3">
-
-        <article class="card">
-          <div class="image-placeholder"></div>
-          <h3>Nom de la pièce</h3>
-          <p>Pliant artisanal · Matières</p>
-          <strong>XXX €</strong><br>
-          <span class="status">Disponible</span>
-        </article>
-
-        <article class="card">
-          <div class="image-placeholder"></div>
-          <h3>Nom de la pièce</h3>
-          <p>Couteau de cuisine · Matières</p>
-          <strong>XXX €</strong><br>
-          <span class="status">Disponible</span>
-        </article>
-
-        <article class="card">
-          <div class="image-placeholder"></div>
-          <h3>Nom de la pièce</h3>
-          <p>Couteau de table · Matières</p>
-          <strong>XXX €</strong><br>
-          <span class="status">Disponible</span>
-        </article>
-
-      </div>
-    </section>
-
-    <section id="atelier">
-
-      <p>L’UNIVERS DE L’ATELIER</p>
-
-      <h2>Matière, geste, usages</h2>
-
-      <div class="grid-3">
-
-        <article>
-          <div class="image-placeholder"></div>
-          <h3>LA MATIÈRE</h3>
-          <p>
-            Des matériaux choisis pour leur caractère,
-            leur qualité et leur adéquation à chaque pièce.
-          </p>
-        </article>
-
-        <article>
-          <div class="image-placeholder"></div>
-          <h3>LE GESTE</h3>
-          <p>
-            Chaque création est conçue, mise en forme,
-            ajustée et finie artisanalement.
-          </p>
-        </article>
-
-        <article>
-          <div class="image-placeholder"></div>
-          <h3>LES USAGES</h3>
-          <p>
-            Cuisine, table, quotidien, extérieur
-            ou créations spécifiques.
-          </p>
-        </article>
-
-      </div>
-    </section>
-
-    <section id="galerie">
-
-      <p>DERNIÈRES CRÉATIONS</p>
-
-      <h2>
-        Quelques pièces sorties de l’atelier
-      </h2>
-
-      <div class="grid-3">
-        <div class="image-placeholder"></div>
-        <div class="image-placeholder"></div>
-        <div class="image-placeholder"></div>
-      </div>
-
-    </section>
-
-    <section class="split">
-
-      <div class="image-placeholder"></div>
-
-      <div>
-
-        <p>L’ATELIER / L’ARTISAN</p>
-
-        <h2>Derrière chaque pièce</h2>
-
-        <p>
-          Je conçois et réalise chaque couteau dans mon atelier,
-          en privilégiant les pièces uniques et les petites séries.
-        </p>
-
-        <p>
-          Le choix des matériaux, l’usage prévu et la recherche
-          du bon équilibre guident chaque création,
-          de la conception aux finitions.
-        </p>
-
-        <p>
-          Chaque pièce est pensée pour être utilisée,
-          durer et conserver son caractère au fil du temps.
-        </p>
-
-      </div>
-
-    </section>
-
-    <section>
-
-      <p>INSTAGRAM</p>
-
-      <h2>Suivre l’atelier au quotidien</h2>
-
+  <section class="hero">
+    <div class="hero-content">
+      <img src="Logo Site.png" alt="Logo Atelier D." class="hero-logo" />
+      <h1>ATELIER D.</h1>
+      <h2>Créations coutelières artisanales</h2>
       <p>
-        Fabrication, détails, matières et nouvelles pièces :
-        retrouver les coulisses de l’atelier sur Instagram.
+        Des pièces uniques et de petites séries, façonnées artisanalement
+        entre acier, bois et matières naturelles.
       </p>
-
-      <a href="#">
-        Suivre l’atelier sur Instagram →
-      </a>
-
-    </section>
-
-  </main>
-
-  <footer id="contact">
-    <h2>ATELIER D.</h2>
-    <p>Créations coutelières artisanales</p>
-    <p>© Atelier D.</p>
-  </footer>
-
+      <a href="#" class="btn">Découvrir les créations</a>
+    </div>
+  </section>
 </body>
 </html>
