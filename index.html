@@ -31,7 +31,7 @@
     }
 
     header {
-      padding: 20px 6%;
+      padding: 14px 6%;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -39,9 +39,10 @@
       background: var(--fond);
     }
 
-    .brand {
-      font-family: Georgia, serif;
-      font-size: 2rem;
+    .brand-logo {
+      display: block;
+      width: 115px;
+      height: auto;
     }
 
     nav a {
@@ -159,7 +160,11 @@
 
     @media (max-width: 800px) {
       header {
-        align-items: flex-start;
+        align-items: center;
+      }
+
+      .brand-logo {
+        width: 88px;
       }
 
       nav {
@@ -207,7 +212,11 @@
 <body>
 
   <header>
-    <div class="brand">ATELIER D.</div>
+    <img
+      src="Logo Site.png"
+      alt="Logo Atelier D."
+      class="brand-logo"
+    >
 
     <nav>
       <a href="#creations">Créations</a>
@@ -250,63 +259,27 @@
       <div class="grid-3">
 
         <article class="card">
-
           <div class="image-placeholder"></div>
-
           <h3>Nom de la pièce</h3>
-
-          <p>
-            Pliant artisanal · Matières
-          </p>
-
-          <strong>XXX €</strong>
-
-          <br>
-
-          <span class="status">
-            Disponible
-          </span>
-
+          <p>Pliant artisanal · Matières</p>
+          <strong>XXX €</strong><br>
+          <span class="status">Disponible</span>
         </article>
 
         <article class="card">
-
           <div class="image-placeholder"></div>
-
           <h3>Nom de la pièce</h3>
-
-          <p>
-            Couteau de cuisine · Matières
-          </p>
-
-          <strong>XXX €</strong>
-
-          <br>
-
-          <span class="status">
-            Disponible
-          </span>
-
+          <p>Couteau de cuisine · Matières</p>
+          <strong>XXX €</strong><br>
+          <span class="status">Disponible</span>
         </article>
 
         <article class="card">
-
           <div class="image-placeholder"></div>
-
           <h3>Nom de la pièce</h3>
-
-          <p>
-            Couteau de table · Matières
-          </p>
-
-          <strong>XXX €</strong>
-
-          <br>
-
-          <span class="status">
-            Disponible
-          </span>
-
+          <p>Couteau de table · Matières</p>
+          <strong>XXX €</strong><br>
+          <span class="status">Disponible</span>
         </article>
 
       </div>
@@ -316,49 +289,35 @@
 
       <p>L’UNIVERS DE L’ATELIER</p>
 
-      <h2>
-        Matière, geste, usages
-      </h2>
+      <h2>Matière, geste, usages</h2>
 
       <div class="grid-3">
 
         <article>
-
           <div class="image-placeholder"></div>
-
           <h3>LA MATIÈRE</h3>
-
           <p>
             Des matériaux choisis pour leur caractère,
             leur qualité et leur adéquation à chaque pièce.
           </p>
-
         </article>
 
         <article>
-
           <div class="image-placeholder"></div>
-
           <h3>LE GESTE</h3>
-
           <p>
             Chaque création est conçue, mise en forme,
             ajustée et finie artisanalement.
           </p>
-
         </article>
 
         <article>
-
           <div class="image-placeholder"></div>
-
           <h3>LES USAGES</h3>
-
           <p>
             Cuisine, table, quotidien, extérieur
             ou créations spécifiques.
           </p>
-
         </article>
 
       </div>
@@ -373,14 +332,11 @@
       </h2>
 
       <div class="grid-3">
-
         <div class="image-placeholder"></div>
-
         <div class="image-placeholder"></div>
-
         <div class="image-placeholder"></div>
-
       </div>
+
     </section>
 
     <section class="split">
@@ -391,9 +347,7 @@
 
         <p>L’ATELIER / L’ARTISAN</p>
 
-        <h2>
-          Derrière chaque pièce
-        </h2>
+        <h2>Derrière chaque pièce</h2>
 
         <p>
           Je conçois et réalise chaque couteau dans mon atelier,
@@ -419,9 +373,7 @@
 
       <p>INSTAGRAM</p>
 
-      <h2>
-        Suivre l’atelier au quotidien
-      </h2>
+      <h2>Suivre l’atelier au quotidien</h2>
 
       <p>
         Fabrication, détails, matières et nouvelles pièces :
@@ -437,17 +389,9 @@
   </main>
 
   <footer id="contact">
-
     <h2>ATELIER D.</h2>
-
-    <p>
-      Créations coutelières artisanales
-    </p>
-
-    <p>
-      © Atelier D.
-    </p>
-
+    <p>Créations coutelières artisanales</p>
+    <p>© Atelier D.</p>
   </footer>
 
 </body>
